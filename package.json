@@ -1,0 +1,49 @@
+{
+  "name": "regression-tests",
+  "version": "0.0.0",
+  "description": "Automated Regression Tests",
+  "scripts": {
+    "plop": "plop",
+    "format": "prettier --write configs/*.json cypress/**/*.js",
+    "cy:open": "cross-env NODE_PATH=. cypress open --config-file cypress-open.json",
+    "cy:run": "cross-env NODE_PATH=. node cypress-runner --config-file cypress.json",
+    "cy:runci": "cross-env NODE_PATH=. cypress run cypress run --headless --browser chrome --config-file cypress-run-ci.json",
+    "jira:chrome": "cypress run --headless --browser chrome"
+  },
+  "author": "Samuel Azumah & Abdul Manaf",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "cross-env": "^7.0.2",
+    "cypress": "^8.2.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-multi-reporters": "^1.5.0",
+    "dayjs": "^1.10.6",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-mocha": "^9.0.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "ls": "^0.2.1",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.2",
+    "plop": "^2.7.4",
+    "prettier": "^2.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "xvfb": "^0.4.0"
+  }
+}

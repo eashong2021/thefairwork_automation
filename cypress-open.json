@@ -1,0 +1,16 @@
+{
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "browser": "chrome",
+  "pageLoadTimeout": 40000,
+  "defaultCommandTimeout": 4000,
+  "testFiles": ["tests/**/*.spec.js"],
+  "video": false,
+  "headless": false,
+  "env": {
+    "mode-run": false
+  },
+  "retries": 0,
+  "scrollBehavior": "center",
+  "chromeWebSecurity": false
+}
