@@ -1,4 +1,4 @@
-# E2e Tests
+# E2e Test Automation Of TheFairWork Int. Application
 
 # Test Registry (Repor test)
 
