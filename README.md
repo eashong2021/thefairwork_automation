@@ -2,11 +2,11 @@
 
 
 # Configure Cypress (Installation)
-1. npm init -y (then hit the enter key on your keyboard)
+1. `npm init -y` (then hit the enter key on your keyboard)
 
-2. npm install cypress --save -dev  (then hit the enter key on your keyboard)
+2. `npm install cypress --save -dev`  (then hit the enter key on your keyboard)
 
-3. npx cypress open  (then hit the enter key on your keyboard)
+3. `npx cypress open`  (then hit the enter key on your keyboard)
 
 4. Open Cypress  
    `npm run cy:open`
@@ -43,10 +43,6 @@ There are some other directories that contains tests:
   Move the test from inside this directory in the `/cypress/integration/tests`
   if you want to run it manually
 
-3. Open Cypress  
-   `npm run cy:open`
-4. or Run the tests  
-   manually or `npm run cy:run`
 
 
 # Author
