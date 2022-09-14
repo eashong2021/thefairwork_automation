@@ -1,6 +1,10 @@
 # E2e Test Automation Of TheFairWork Int. Application
 
 
+# Objective
+The aim and purpose of this automation is to attempt to exhaust the test automation  of
+the user documentation of TheFairWork Int. Application
+
 # Configure Cypress (Installation)
 1. `npm init -y` (then hit the enter key on your keyboard)
 
