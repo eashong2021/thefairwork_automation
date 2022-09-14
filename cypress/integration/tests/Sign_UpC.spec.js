@@ -48,7 +48,7 @@ devices.forEach((device) => {
     */
   })
   it('Sign Up as a client with Google credentials', () => {
-
+    cy.get(':nth-child(3) > .navLink', {time:10000}).click({force : true})
   })
 
 
