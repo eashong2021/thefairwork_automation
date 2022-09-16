@@ -29,20 +29,28 @@ devices.forEach((device) => {
     it('Should visit TheFairWork homepage', () => {
         cy.visit(targetUrl)
     })
-    it('Log in as a Freelancer with email credentials', () => {
 
+   it('Sign Up in as a Freelancer with email credentials', () => {
+        cy.get(':nth-child(3) > .navLink').click({force: true})
+        cy.get('[style="padding-top: 0.8rem; height: 100%; padding-left: 1rem;"] > .CustomRadioButton', {timeout:10000})
+        cy.get('.MuiButton-root').click()
+        cy.get('#email').type('cegnudulmo@vusra.com')
+        cy.get('#outlined-adornment-password').type('cegnudulmo@vusra.com')
+        cy.get('#confirm-password').type('cegnudulmo@vusra.com')
+        cy.get("[type=submit]").click()
     })
 
 
 
-   it('Log in as a Freelancer with Google credentials', () => {
+  it('Log in as a Freelancer with Google credentials', () => {
+
 
    })
 
-
+ /*
    it('Log in as a Freelancer with LinkedIn credentials', () => {
 
    })
-
+*/
 })
 })
