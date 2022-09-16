@@ -31,10 +31,15 @@ devices.forEach((device) => {
     })
 
     it('Log in as a Recruiter with email credentials', () => {
-
+        cy.get('.d-flex > :nth-child(2) > .navLink > .MuiButtonBase-root> .MuiButton-label', {force:true})
+        .click()
+        cy.get('input[type="email"]').type('jognubugno@vusra.com')
+        cy.get('input[type="password"]').type('jognubugno@vusra.com')
+       // cy.get('input[name="confirmPassword"]').type('jognubugno@vusra.com')
+        cy.get('[type="submit"]').click()
     })
 
-
+/*
     it('Log in as a Recruiter with email and a forgotten password', () => {
 
     })
@@ -49,6 +54,6 @@ devices.forEach((device) => {
    it('Log in as a Recruiter with LinkedIn credentials', () => {
 
    })
-
+*/
 })
 })

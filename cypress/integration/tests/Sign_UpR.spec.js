@@ -29,10 +29,19 @@ devices.forEach((device) => {
     it('Should visit TheFairWork homepage', () => {
         cy.visit(targetUrl)
     })
-    it('Log in as a Recruiter with email credentials', () => {
 
+    it('Sign Up  as a Recruiter with email credentials', () => {
+       // cy.get('.MuiButtonBase-root > .MuiButton-label', ).click()
+          cy.get('.d-flex > :nth-child(2) > .navLink > .MuiButtonBase-root> .MuiButton-label', {force:true})
+          .click()
+          cy.get('p > .navLink').click()
+          //cy.get('.', {multiple: true}).click()
+          cy.get('#email').type('makkanekno@vusra.com').should('eq', 'makkanekno@vusra.com', {timeout: 10000})
+          cy.get('#outlined-adornment-password').type('makkanekno@vusra.com')
+          cy.get('#confirm-password').type('makkanekno@vusra.com')
+          cy.get('[type="submit"]').click()
     })
-
+/*
     it('Log in as a Recruiter with email and forgotten password', () => {
 
     })
@@ -46,6 +55,6 @@ devices.forEach((device) => {
    it('Log in as a Recruiter with LinkedIn credentials', () => {
 
    })
-
+*/
 })
 })
