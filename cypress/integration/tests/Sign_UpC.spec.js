@@ -29,33 +29,32 @@ devices.forEach((device) => {
 
     it('Should visit TheFairWork homepage', () => {
       cy.visit(targetUrl)
-      cy.get('.homepageBrand')
+      
    
     })
     it('Sign Up as a Client with email credentials', () => {
-     cy.get(':nth-child(3) > .navLink', {time:10000}).click({force : true})
-     cy.get('[style="padding-top: 0.8rem; padding-left: 1rem; height: 100%;"] > .d-flex > .SignUpPaperText', {timeout:10000})
+    //cy.get(':nth-child(3) > .navLink', {time:10000}).click({force : true})
+     cy.get(':nth-child(3) > .navLink').click({force: true})
+     cy.get('[style="padding-top: 0.8rem; padding-left: 1rem; height: 100%;"] > .CustomRadioButton').click()
+     //cy.get('.col-md-8> .MuiPaper-root> .d-flex> .CustomRadioButton>.d-flex> .SignUpPaperText').click
+    // cy.get('[style="padding-top: 0.8rem; padding-left: 1rem; height: 100%;"] > .d-flex > .SignUpPaperText', {timeout:10000}) 
      cy.get('.MuiButton-root').click({ multiple:true})
-     cy.get('#email').type('bultiragno@vusra.com')
-     cy.get('#outlined-adornment-password').type('bultiragno@vusra.com')
-     cy.get('#confirm-password').type('bultiragno@vusra.com')
+     cy.get('#email').type('pepsutulte@vusra.com')
+     cy.get('#outlined-adornment-password').type('pepsutulte@vusra.com')
+     cy.get('#confirm-password').type('pepsutulte@vusra.com')
      cy.get('.mt-2 > .MuiButton-root').click()
-      /*
-     //Input fourdigit verification code to be automatically allowed to log in
-     cy.get('#email').type('bultiragno@vusra.com')
-     cy.get('#outlined-adornment-password').type('bultiragno@vusra.com')
-     cy.contains('').should('be.visible').click()
-    */
+    
   })
+  /*
   it('Sign Up as a client with Google credentials', () => {
-    cy.get(':nth-child(3) > .navLink', {time:10000}).click({force : true})
+   // cy.get(':nth-child(3) > .navLink', {time:10000}).click({force : true})
   })
 
 
   it('Sign Up as a client with LinkedIn credentials', () => {
 
   })
-  
+ */ 
   })
 
 })

@@ -29,10 +29,14 @@ devices.forEach((device) => {
     it('Should visit TheFairWork homepage', () => {
         cy.visit(targetUrl)
     })
+
     it('Log in as a client with email credentials', () => {
-
+      cy.get(':nth-child(4) > .navLink.mt-1').click({force: true})
+      cy.get('#email').type('pepsutulte@vusra.com')
+     cy.get('#password').type('pepsutulte@vusra.com')
+     cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
     })
-
+/*
     it('Log in as a client with email and forgotten password', () => {
 
     })
@@ -46,6 +50,6 @@ devices.forEach((device) => {
    it('Log in as a client with LinkedIn credentials', () => {
 
    })
-
+*/
 })
 })
