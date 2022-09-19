@@ -37,7 +37,7 @@ devices.forEach((device) => {
          cy.get('.mb-2 > .MuiButtonBase-root').click()
 
     })
-
+/*
     it('Log in as a Freelancer with email and forgotten password', () => {
 
     })
@@ -51,6 +51,6 @@ devices.forEach((device) => {
    it('Log in as a Freelancer with LinkedIn credentials', () => {
 
    })
-
+*/
 })
 })

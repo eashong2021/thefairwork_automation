@@ -40,13 +40,13 @@ devices.forEach((device) => {
         cy.get("[type=submit]").click()
     })
 
-
+/*
 
   it('Log in as a Freelancer with Google credentials', () => {
 
 
    })
-
+*/
  /*
    it('Log in as a Freelancer with LinkedIn credentials', () => {
 

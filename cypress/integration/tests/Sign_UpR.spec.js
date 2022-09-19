@@ -1,3 +1,4 @@
+//import { first } from 'cypress/types/lodash'
 import { getTestSpecName } from '../../../lib/testSpecName'
 import { defaultDevices as devices } from '../_helpers/default-devices'
 
@@ -31,16 +32,19 @@ devices.forEach((device) => {
     })
 
     it('Sign Up  as a Recruiter with email credentials', () => {
-       // cy.get('.MuiButtonBase-root > .MuiButton-label', ).click()
-          cy.get('.d-flex > :nth-child(2) > .navLink > .MuiButtonBase-root> .MuiButton-label', {force:true})
-          .click()
-          cy.get('p > .navLink').click()
-          //cy.get('.', {multiple: true}).click()
-          cy.get('[name=signupEmail]').type('makkanekno@vusra.com').should('eq', 'makkanekno@vusra.com', {timeout: 10000})
-          cy.get('#outlined-adornment-password').type('makkanekno@vusra.com')
-          cy.get('#confirm-password').type('makkanekno@vusra.com')
+        cy.get('.d-flex > :nth-child(2) > .navLink > .MuiButtonBase-root> .MuiButton-label', {force:true}).click()
+        cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-login')
+        cy.get('p > .navLink').contains('Sign Up').click()
+        cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-signup')
+        cy.get('form > .row mt-2 mb-4 >:nth-child(1)').type('cidulogav.pelevaqeq@gotgel.org').should('be.eq', 'cidulogav.pelevaqeq@gotgel.org')
+         
+       // cy.get('input[type="email"]').type('cidulogav.pelevaqeq@gotgel.org').should('be.eq', 'cidulogav.pelevaqeq@gotgel.org')
+          //cy.get('.MuiOutlinedInput', {multiple: true},  {timeout: 10000}).type('cidulogav.pelevaqeq@gotgel.org')
+        cy.get('#outlined-adornment-password').type('cidulogav.pelevaqeq@gotgel.org')
+        cy.get('#confirm-password').type('cidulogav.pelevaqeq@gotgel.org')
           cy.get('[type="submit"]').click()
     })
+
 /*
     it('Log in as a Recruiter with email and forgotten password', () => {
 
