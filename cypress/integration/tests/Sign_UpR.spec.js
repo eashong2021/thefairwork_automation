@@ -36,7 +36,7 @@ devices.forEach((device) => {
           .click()
           cy.get('p > .navLink').click()
           //cy.get('.', {multiple: true}).click()
-          cy.get('#email').type('makkanekno@vusra.com').should('eq', 'makkanekno@vusra.com', {timeout: 10000})
+          cy.get('[name=signupEmail]').type('makkanekno@vusra.com').should('eq', 'makkanekno@vusra.com', {timeout: 10000})
           cy.get('#outlined-adornment-password').type('makkanekno@vusra.com')
           cy.get('#confirm-password').type('makkanekno@vusra.com')
           cy.get('[type="submit"]').click()
