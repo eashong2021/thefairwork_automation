@@ -30,11 +30,18 @@ devices.forEach((device) => {
         cy.visit(targetUrl)
     })
     
-    it('Log in as a Freelancer with email credentials', () => {
+   
+      it('Log in as a Freelancer with email credentials', () => {
+        cy.get(':nth-child(4) > .navLink.mt-1').click({force: true})
+        cy.get('#email').type('cegnudulmo@vusra.com')
+        cy.get('#password').type('cegnudulmo@vusra.com')
+        //cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
+        cy.get('.mb-2 > .MuiButtonBase-root').click()
 
-    })
+   })
 
-    it('Update Freelancer profile', () => {
+    it('Change Freelancer Password', () => {
+
       //  1.Click on the profile icon
 
       //  2. Click on “Account Settings” and fill in the form that gets rendered.
