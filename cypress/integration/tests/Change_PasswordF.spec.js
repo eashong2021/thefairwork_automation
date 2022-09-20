@@ -35,12 +35,21 @@ devices.forEach((device) => {
         cy.get(':nth-child(4) > .navLink.mt-1').click({force: true})
         cy.get('#email').type('cegnudulmo@vusra.com')
         cy.get('#password').type('cegnudulmo@vusra.com')
-        //cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
-        cy.get('.mb-2 > .MuiButtonBase-root').click()
+        cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
+        cy.url('https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
+        .should('eq', 'https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
 
    })
 
     it('Change Freelancer Password', () => {
+      cy.url('https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
+      .should('eq', 'https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
+     cy.contains('Update Profile').should('be.visible').click({force: true})
+     cy.get('.MuiButtonBase-root').contains('Account Settings').click()
+     cy.get('.MuiOutlinedInput-input').type('.MuiOutlinedInput-input')
+     cy.get('#newPassword').type('.MuiOutlinedInput-input')
+     cy.get('#confirmPassword').type('.MuiOutlinedInput-input')
+
 
       //  1.Click on the profile icon
 
