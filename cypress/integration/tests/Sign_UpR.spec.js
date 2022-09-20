@@ -1,3 +1,4 @@
+//import { first } from 'cypress/types/lodash'
 import { getTestSpecName } from '../../../lib/testSpecName'
 import { defaultDevices as devices } from '../_helpers/default-devices'
 
@@ -29,10 +30,22 @@ devices.forEach((device) => {
     it('Should visit TheFairWork homepage', () => {
         cy.visit(targetUrl)
     })
-    it('Log in as a Recruiter with email credentials', () => {
 
+    it('Sign Up  as a Recruiter with email credentials', () => {
+        cy.get('.d-flex > :nth-child(2) > .navLink > .MuiButtonBase-root> .MuiButton-label', {force:true}).click()
+        cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-login')
+        cy.get('p > .navLink').contains('Sign Up').click()
+        cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-signup')
+        cy.get('form > .row mt-2 mb-4 >:nth-child(1)').type('cidulogav.pelevaqeq@gotgel.org').should('be.eq', 'cidulogav.pelevaqeq@gotgel.org')
+         
+       // cy.get('input[type="email"]').type('cidulogav.pelevaqeq@gotgel.org').should('be.eq', 'cidulogav.pelevaqeq@gotgel.org')
+          //cy.get('.MuiOutlinedInput', {multiple: true},  {timeout: 10000}).type('cidulogav.pelevaqeq@gotgel.org')
+        cy.get('#outlined-adornment-password').type('cidulogav.pelevaqeq@gotgel.org')
+        cy.get('#confirm-password').type('cidulogav.pelevaqeq@gotgel.org')
+          cy.get('[type="submit"]').click()
     })
 
+/*
     it('Log in as a Recruiter with email and forgotten password', () => {
 
     })
@@ -46,6 +59,6 @@ devices.forEach((device) => {
    it('Log in as a Recruiter with LinkedIn credentials', () => {
 
    })
-
+*/
 })
 })

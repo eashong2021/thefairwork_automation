@@ -31,8 +31,13 @@ devices.forEach((device) => {
     })
     
     it('Log in as a client with email credentials', () => {
-
-    })
+        cy.get(':nth-child(4) > .navLink.mt-1').click({force: true})
+        cy.get('#email').type('pepsutulte@vusra.com')
+       cy.get('#password').type('pepsutulte@vusra.com')
+       cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
+      })
+  /*
+    
 
     it('Update client profile', () => {
       //  1.Click on the profile icon
@@ -41,6 +46,6 @@ devices.forEach((device) => {
         
        // 3. Click on “Change Password”
     })
-
+*/
 })
 })
