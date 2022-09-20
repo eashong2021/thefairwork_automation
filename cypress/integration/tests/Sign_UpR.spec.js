@@ -38,8 +38,7 @@ devices.forEach((device) => {
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-signup')
         cy.get('form > .row mt-2 mb-4 >:nth-child(1)').type('cidulogav.pelevaqeq@gotgel.org').should('be.eq', 'cidulogav.pelevaqeq@gotgel.org')
          
-       // cy.get('input[type="email"]').type('cidulogav.pelevaqeq@gotgel.org').should('be.eq', 'cidulogav.pelevaqeq@gotgel.org')
-          //cy.get('.MuiOutlinedInput', {multiple: true},  {timeout: 10000}).type('cidulogav.pelevaqeq@gotgel.org')
+       
         cy.get('#outlined-adornment-password').type('cidulogav.pelevaqeq@gotgel.org')
         cy.get('#confirm-password').type('cidulogav.pelevaqeq@gotgel.org')
           cy.get('[type="submit"]').click()
