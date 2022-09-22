@@ -43,8 +43,8 @@ devices.forEach((device) => {
 
    it('Change Freelancer Password', () => {
     //cy.get('.btn').invoke('show').click()
-    cy.get('.hidden').click({ force: true })
-   // cy.get('.hidden').invoke('show').click()
+    // cy.get('.hidden').click({ force: true })
+   cy.get('.hidden').invoke('show').click()
     //cy.get('')
    })
 
