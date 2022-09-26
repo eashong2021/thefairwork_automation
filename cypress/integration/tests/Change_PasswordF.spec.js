@@ -41,11 +41,24 @@ devices.forEach((device) => {
 
    })
 
+   it('Change Freelancer Password', () => {
+    //cy.get('.btn').invoke('show').click()
+    // cy.get('.hidden').click({ force: true })
+   cy.get('.hidden').invoke('show').click()
+    //cy.get('')
+   })
+
+
+
+
+
+   /*
+
     it('Change Freelancer Password', () => {
-      cy.url('https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
-      .should('eq', 'https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
-     cy.contains('Update Profile').should('be.visible').click({force: true})
-     cy.get('.MuiButtonBase-root').contains('Account Settings').click()
+      //cy.url('https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
+     // .should('eq', 'https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
+     //cy.contains('Update Profile').should('be.visible').click({force: true})
+     cy.get('.MuiButtonBase-root', {timeout:10000}).should('contains', 'Account Settings').click()
      cy.get('.MuiOutlinedInput-input').type('.MuiOutlinedInput-input')
      cy.get('#newPassword').type('.MuiOutlinedInput-input')
      cy.get('#confirmPassword').type('.MuiOutlinedInput-input')
@@ -57,6 +70,6 @@ devices.forEach((device) => {
         
        // 3. Click on “Change Password”
     })
-
+*/
 })
 })

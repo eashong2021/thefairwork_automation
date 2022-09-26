@@ -32,14 +32,13 @@ devices.forEach((device) => {
     })
 
     it('Sign Up  as a Recruiter with email credentials', () => {
-        cy.get('.d-flex > :nth-child(2) > .navLink > .MuiButtonBase-root> .MuiButton-label', {force:true}).click()
+        cy.get('.d-flex > :nth-child(2) > .navLink > .btn', {force:true}).click()
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-login')
-        cy.get('p > .navLink').contains('Sign Up').click()
+        cy.get('p > .navLink').click()
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-signup')
-        cy.get('form > .row mt-2 mb-4 >:nth-child(1)').type('cidulogav.pelevaqeq@gotgel.org').should('be.eq', 'cidulogav.pelevaqeq@gotgel.org')
+        cy.get('form > .mt-2 .mb-4 #email').type('cidulogav.pelevaqeq@gotgel.org')
          
-       // cy.get('input[type="email"]').type('cidulogav.pelevaqeq@gotgel.org').should('be.eq', 'cidulogav.pelevaqeq@gotgel.org')
-          //cy.get('.MuiOutlinedInput', {multiple: true},  {timeout: 10000}).type('cidulogav.pelevaqeq@gotgel.org')
+       
         cy.get('#outlined-adornment-password').type('cidulogav.pelevaqeq@gotgel.org')
         cy.get('#confirm-password').type('cidulogav.pelevaqeq@gotgel.org')
           cy.get('[type="submit"]').click()
