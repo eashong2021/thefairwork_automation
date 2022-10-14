@@ -1,11 +1,13 @@
 //import { first } from 'cypress/types/lodash'
 import { getTestSpecName } from '../../../lib/testSpecName'
 import { defaultDevices as devices } from '../_helpers/default-devices'
+import { createRegistrationData } from '../../fixtures/shared/user-create'
 
   const testSpecName = getTestSpecName(__filename)
 
 devices.forEach((device) => {
   const targetUrl = 'https://connect-dev.amalitech-dev.net'
+  const userData = createRegistrationData()
   describe(`${testSpecName} @@ Visit site- ${device.name}`, () => {
     const [w, h] = device.viewport
 
@@ -36,11 +38,11 @@ devices.forEach((device) => {
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-login')
         cy.get('p > .navLink').click()
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-signup')
-        cy.get('form > .mt-2 .mb-4 #email').type('cidulogav.pelevaqeq@gotgel.org')
+        cy.get('form > .mt-2 .mb-4 #email').type(userData.email)
          
        
-        cy.get('#outlined-adornment-password').type('cidulogav.pelevaqeq@gotgel.org')
-        cy.get('#confirm-password').type('cidulogav.pelevaqeq@gotgel.org')
+        cy.get('#outlined-adornment-password').type(userData.password)
+        cy.get('#confirm-password').type(userData.password)
           cy.get('[type="submit"]').click()
     })
 

@@ -4,6 +4,7 @@
   "pageLoadTimeout": 20000,
   "defaultCommandTimeout": 10000,
   "reporter": "cypress-multi-reporters",
+  "experimentalStudio" : true,
   "reporterOptions": {
     "reporterEnabled": "mochawesome, mocha-junit-reporter",
     "mochawesomeReporterOptions": {
