@@ -24,8 +24,8 @@ export function createRegistrationData() {
   return {
     testId: new Date().getTime(),
     email: 'ebenezer.ashong+' + new Date().getTime() + '@amalitech.com',
-    password: '123456aA_',
-    passwordRepeat: '123456aA_',
+    password: 'costiYespu@vusra.com_ ',
+    passwordRepeat: 'costiYespu@vusra.com_ ',
     salutation: '0',
     firstName: 'Ebenezer',
     lastName: 'Ashong',
