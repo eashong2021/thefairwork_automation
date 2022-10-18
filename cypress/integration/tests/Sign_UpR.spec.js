@@ -34,16 +34,20 @@ devices.forEach((device) => {
     })
 
     it('Sign Up  as a Recruiter with email credentials', () => {
+      if(device.isMobile==true){
+
+      }else{
         cy.get('.d-flex > :nth-child(2) > .navLink > .btn', {force:true}).click()
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-login')
         cy.get('p > .navLink').click()
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-signup')
         cy.get('form > .mt-2 .mb-4 #email').type(userData.email)
-         
-       
         cy.get('#outlined-adornment-password').type(userData.password)
         cy.get('#confirm-password').type(userData.password)
           cy.get('[type="submit"]').click()
+      }
+        
+        
     })
 
 /*

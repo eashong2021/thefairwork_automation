@@ -5,6 +5,7 @@
   "defaultCommandTimeout": 10000,
   "reporter": "cypress-multi-reporters",
   "experimentalStudio" : true,
+  "watchForFileChange" : true,
   "reporterOptions": {
     "reporterEnabled": "mochawesome, mocha-junit-reporter",
     "mochawesomeReporterOptions": {

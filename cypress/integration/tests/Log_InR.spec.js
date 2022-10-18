@@ -1,10 +1,12 @@
 import { getTestSpecName } from '../../../lib/testSpecName'
 import { defaultDevices as devices } from '../_helpers/default-devices'
+import { createRegistrationData } from '../../fixtures/shared/user-create'
 
   const testSpecName = getTestSpecName(__filename)
 
 devices.forEach((device) => {
   const targetUrl = 'https://connect-dev.amalitech-dev.net'
+  const userData = createRegistrationData()
   describe(`${testSpecName} @@ Visit site- ${device.name}`, () => {
     const [w, h] = device.viewport
 
@@ -31,8 +33,8 @@ devices.forEach((device) => {
     })
 
     it('Log in as a Recruiter with email credentials', () => {
-        cy.get('.d-flex > :nth-child(2) > .navLink > .MuiButtonBase-root> .MuiButton-label', {force:true})
-        .click()
+        cy.get('.d-flex > :nth-child(2) > .navLink > .MuiButtonBase-root> .MuiButton-label')
+        .click({force:true})
         cy.get('input[type="email"]').type('jognubugno@vusra.com')
         cy.get('input[type="password"]').type('jognubugno@vusra.com')
        // cy.get('input[name="confirmPassword"]').type('jognubugno@vusra.com')

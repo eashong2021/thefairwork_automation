@@ -46,30 +46,47 @@ devices.forEach((device) => {
       cy.get('#confirm-password').clear();
       cy.get('#confirm-password').type(userData.passwordRepeat);
       cy.get('.mt-2 > .MuiButton-root').click();
+      cy.get('.form-group > #code1 ').type('9fe2')   //user has to verify with current pin to further automate
+      cy.get('#submit')
+     // cy.url().should('eq', '')
+      
 
     }else{
       cy.get(':nth-child(3) > .navLink', {force: true}).should('be.visible').click();
+      //cy.get('//*[@id="signup-freelancer"]').click()
       cy.get('[style="padding-top: 0.8rem; height: 100%; padding-left: 1rem;"] > .CustomRadioButton').click();
       cy.get('.MuiButton-root').click();
       cy.get('#email').clear();
       cy.get('#email').type(userData.email)
       cy.get('#outlined-adornment-password').clear();
-     cy.get('#outlined-adornment-password').type(userData.password);
-     cy.get('#confirm-password').clear();
-     cy.get('#confirm-password').type('pagyco@lyricspad.net');
-     cy.get('.mt-2 > .MuiButton-root').click();
+      cy.get('#outlined-adornment-password').type(userData.password);
+      cy.get('#confirm-password').clear();
+      cy.get('#confirm-password').type('userData.password');
+      cy.get('.mt-2 > .MuiButton-root').click();
+    
     
     }
-    //cy.get('.homepageBrand, {timeout: 1000}').should('be.visible');
+
+    it('Log in as a Freelancer with email credentials', () => {
+      cy.get(':nth-child(4) > .navLink.mt-1').click({force: true})
+      cy.get('#email').type('userData.email')
+      cy.get('#password').type('userData.password')
+      cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
+      cy.get('.mb-2 > .MuiButtonBase-root').click()
+
+ })
+/*
     
       /*  cy.get(':nth-child(3) > .navLink').click({force: true})
         cy.get('[style="padding-top: 0.8rem; height: 100%; padding-left: 1rem;"] > .CustomRadioButton', {timeout:10000})
         cy.get('.MuiButton-root').click()
-        cy.get('#email').type('zavugosu@cyclelove.cc')
-        cy.get('#outlined-adornment-password').type('cegnudulmo@vusra.com')
-        cy.get('#confirm-password').type('cegnudulmo@vusra.com')
+        cy.get('#email').type('userData.email')
+        cy.get('#outlined-adornment-password').type('userData.password')
+        cy.get('#confirm-password').type('userData.password')
         cy.get("[type=submit]").click()*/
-    })
+   })
+
+/*
 
 /*
 
