@@ -10,7 +10,7 @@
     "cy:runci": "cross-env NODE_PATH=. cypress run cypress run --headless --browser chrome --config-file cypress-run-ci.json",
     "jira:chrome": "cypress run --headless --browser chrome"
   },
-  "author": "Samuel Azumah & Abdul Manaf",
+  "author": "Ebenezer Ashong",
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
