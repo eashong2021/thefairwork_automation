@@ -1,10 +1,12 @@
 import { getTestSpecName } from '../../../lib/testSpecName'
 import { defaultDevices as devices } from '../_helpers/default-devices'
+import { createRegistrationData } from '../../fixtures/shared/user-create'
 
   const testSpecName = getTestSpecName(__filename)
 
 devices.forEach((device) => {
   const targetUrl = 'https://connect-dev.amalitech-dev.net'
+  const userData = createRegistrationData()
   describe(`${testSpecName} @@ Visit site- ${device.name}`, () => {
     const [w, h] = device.viewport
 
