@@ -34,8 +34,8 @@ devices.forEach((device) => {
     
     it('Log in as a Recruiter with email credentials', () => {
       if(device.isMobile==true){
-        cy.get('button[type="button"]').click()
-cy.get('li[]')
+        
+
       }else{
 
       }

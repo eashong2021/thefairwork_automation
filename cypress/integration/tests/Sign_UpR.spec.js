@@ -34,16 +34,28 @@ devices.forEach((device) => {
     })
 
     it('Sign Up  as a Recruiter with email credentials', () => {
+     
       if(device.isMobile==true){
+        cy.get('svg[class="MuiSvgIcon-root"]').click()
+        cy.get('.MuiListItem-root > .MuiButtonBase-root > .MuiButton-label').click()
+        cy.get('a[class="navLink"]').click()
+        cy.wait
+       // cy.get('#email').clear();
+        cy.get('#email', {timeout:2000}).type('jhjhgfdklsrevgl@yopmail.com')
+        cy.get('input[id="outlined-adornment-password"]').clear()
+        cy.get('input[id="outlined-adornment-password"]').type('jhjhgfdklsrevgl@yopmail.com')
+        cy.get('input#confirm-password').clear()
+        cy.get('input#confirm-password').type('jhjhgfdklsrevgl@yopmail.com')
+        cy.get('button[class="MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMeMuiButtonBase-root.btn.css-1hw9j7s"]').click()
 
       }else{
         cy.get('.d-flex > :nth-child(2) > .navLink > .btn', {force:true}).click()
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-login')
         cy.get('p > .navLink').click()
         cy.url().should('eq', 'https://connect-dev.amalitech-dev.net/recruiter-signup')
-        cy.get('form > .mt-2 .mb-4 #email').type(userData.email)
-        cy.get('#outlined-adornment-password').type(userData.password)
-        cy.get('#confirm-password').type(userData.password)
+        cy.get('form > .mt-2 .mb-4 #email').type('jhjhgfdklsrevgl@yopmail.com')
+        cy.get('#outlined-adornment-password').type('jhjhgfdklsrevgl@yopmail.com')
+        cy.get('#confirm-password').type('jhjhgfdklsrevgl@yopmail.com')
           cy.get('[type="submit"]').click()
       }
         

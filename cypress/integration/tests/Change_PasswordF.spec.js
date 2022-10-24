@@ -34,12 +34,22 @@ devices.forEach((device) => {
     
    
       it('Log in as a Freelancer with email credentials', () => {
-        cy.get(':nth-child(4) > .navLink.mt-1').click({force: true})
-        cy.get('#email').type('cegnudulmo@vusra.com')
-        cy.get('#password').type('cegnudulmo@vusra.com')
-        cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
-        cy.url('https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
-        .should('eq', 'https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
+        if(device.isMobile==true){
+          cy.get('svg[class="MuiSvgIcon-root"]').click()
+          cy.contains('Login').click({force:true})
+          cy.wait
+          cy.get('#email').clear();
+          cy.get('#email').type('rophjkdyulg@yopmail.com')
+          cy.get('#password').clear('rophjkdyulg@yopmail.com');
+          cy.get('[type="submit"]', {timeout: 10000}).click();
+        }else{
+          cy.get(':nth-child(4) > .navLink.mt-1').click({force: true})
+          cy.get('#email').type('rophjkdyulg@yopmail.com')
+          cy.get('#password').type('rophjkdyulg@yopmail.com')
+          cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
+          cy.url('https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
+          .should('eq', 'https://connect-dev.amalitech-dev.net/freelancer-all-jobs')
+        }
 
    })
 

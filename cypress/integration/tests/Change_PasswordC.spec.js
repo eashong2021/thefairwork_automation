@@ -33,11 +33,24 @@ devices.forEach((device) => {
     })
 
     it('Log in as a client with email credentials', () => {
+      if(device.isMobile==true){
+        cy.get('svg[class="MuiSvgIcon-root"]').click()
+        cy.contains('Login').click({force:true})
+        cy.wait
+        cy.get('#email').clear();
+        cy.get('#email').type('pepsutulte@vusra.com')
+        cy.get('#password').clear()
+        cy.get('#password').type('pepsutulte@vusra.com')
+        cy.get('[type="submit"]', {timeout: 10000}).click();
+      }else{
         cy.get(':nth-child(4) > .navLink.mt-1').click({force: true})
         cy.get('#email').type('pepsutulte@vusra.com')
        cy.get('#password').type('pepsutulte@vusra.com')
        cy.get('.mobileViewTop > .MuiButtonBase-root > .MuiButton-label').click()
       })
+      }
+       
+    
     /*
       
 
