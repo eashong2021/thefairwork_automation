@@ -29,7 +29,9 @@ devices.forEach((device) => {
     })
 
     it('Should visit TheFairWork homepage', () => {
-        cy.visit(targetUrl)
+      cy.visit(targetUrl)
+      /* ==== Generated with Cypress Studio ==== */
+      /* ==== End Cypress Studio ==== */
     })
     
     it('Log in as a Freelancer with email credentials', () => {
